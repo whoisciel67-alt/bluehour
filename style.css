@@ -29,6 +29,14 @@ body {
             rgba(35, 15, 85, 0.15)
         ),
         url("img/indexbg.png");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+
+        background-attachment: fixed;
+
+        position: relative;
+        overflow: hidden;
 }
 
 
@@ -107,6 +115,8 @@ body {
     overflow: hidden;
 
     box-shadow: 0 10px 40px rgba(15,0,45,0.4);
+
+
 }
 
 /*game PLACEHOLDER*/
