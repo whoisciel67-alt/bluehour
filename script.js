@@ -1,38 +1,48 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
 
-    const sections = document.querySelectorAll(
-        ".intro, .about, .intrests"
-    );
+if (bgMusic && musicToggle) {
 
-    // Make sure sections appear even if animations aren't supported
-    if (!("IntersectionObserver" in window)) {
-        sections.forEach(section => {
-            section.classList.add("visible");
-        });
-        return;
+    bgMusic.volume = 0.35;
+
+    function updateButton() {
+        musicToggle.textContent = bgMusic.paused
+            ? "♫ Music: OFF"
+            : "♫ Music: ON";
     }
 
-    const observer = new IntersectionObserver((entries, observer) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-
-                // Stop observing after the animation
-                observer.unobserve(entry.target);
-            }
-
+    // Attempt autoplay
+    bgMusic.play()
+        .then(updateButton)
+        .catch(() => {
+            musicToggle.textContent = "♫ Click to play";
         });
 
-    }, {
-        threshold: 0.05,
-        rootMargin: "0px 0px -30px 0px"
+    // Music button
+    musicToggle.addEventListener("click", async () => {
+        if (bgMusic.paused) {
+            try {
+                await bgMusic.play();
+            } catch (error) {
+                console.error("Music playback failed:", error);
+            }
+        } else {
+            bgMusic.pause();
+        }
+
+        updateButton();
     });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    // Start music after the visitor interacts elsewhere
+    document.addEventListener("pointerdown", (event) => {
+        if (event.target.closest("#musicToggle")) return;
 
-});
+        if (bgMusic.paused) {
+            bgMusic.play().then(updateButton).catch(console.error);
+        }
+    }, { once: true });
+
+    bgMusic.addEventListener("play", updateButton);
+    bgMusic.addEventListener("pause", updateButton);
+}

@@ -17,6 +17,71 @@ body {
     background: #241451;
 }
 
+/*music*/
+
+/* MUSIC SECTION */
+
+.music-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.music-player {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px;
+
+    background: rgba(15, 20, 40, 0.85);
+    border: 1px solid rgba(150, 180, 255, 0.3);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.music-icon {
+    font-size: 40px;
+    color: #a9c8ff;
+}
+
+.music-info h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.music-info p {
+    color: #aab4d0;
+    font-size: 13px;
+}
+
+.music-player audio {
+    width: 100%;
+}
+
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+
+    padding: 12px 18px;
+    border: 1px solid #829acb;
+    border-radius: 30px;
+
+    background: #10182b;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.music-toggle:hover {
+    background: #293d63;
+    transform: translateY(-3px);
+}
+
 
 /*game (index) css*/
 #background3 {
