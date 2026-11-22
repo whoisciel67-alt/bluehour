@@ -14,6 +14,15 @@
 
 </head>
 <body>
+<!--auto play audio-->
+    <audio id="bgMusic" autoplay loop>
+        <source src="music/senbonzakura.mp4" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" class="music-toggle">
+        ♫ Music: ON
+    </button>
+
     <nav>
         <div class="logo">KL</div>
         <ul class="nav-links">
@@ -36,6 +45,26 @@
 
             <a href="#play" class="play-btn">play the game ✧</a>
         </section>
+
+    <!--music player-->
+    <section class="music-section">
+        <p class="section-label">music (inspo) of bluehour</p>
+        <h2>listen to the soundtrack</h2>
+
+        <div class="music-player">
+            <div class="music icon">♫</div>
+
+            <div class="music-info">
+                <h3>Senbonzakura</h3>
+                <p>Lizz Robinett</p>
+            </div>
+            <audio controls loop>
+                <source src="music/senbonzakura.mp4" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+    </section>
+
 
     <!-- game display -->
     <section id="play" class="game-display">
