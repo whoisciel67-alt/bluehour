@@ -208,12 +208,23 @@ body {
     background: rgba(39,19,91,0.65);
     border: 1px solid rgba(255,205,255,0.3);
     border-radius: 20px;
+
+    
+    backdrop-filter: blur(12px);
+
+    transition: 0.3s ease;
 }
 
 .credits-card p {
     color: #fff0ff;
     line-height: 2.2;
 }
+
+.credits-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255,150,230,0.15);
+}
+
 
 /* MOBILE */
 
