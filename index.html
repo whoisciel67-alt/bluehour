@@ -14,18 +14,6 @@
 
 </head>
 <body>
-<!--auto play audio-->
-
-    <audio controls id="bgMusic">
-        <source src="./music/senbonzakura.mp3" type="audio/mpeg">
-        Your browser does not support audio.
-    </audio>
-
-
-    <button id="musicToggle" class="music-toggle">
-        ♫ Music: ON
-    </button>
-
     <nav>
         <div class="logo">KL</div>
         <ul class="nav-links">
@@ -49,24 +37,38 @@
             <a href="#play" class="play-btn">play the game ✧</a>
         </section>
 
-    <!--music player-->
-    <section class="music-section">
-        <p class="section-label">music (inspo) of bluehour</p>
-        <h2>listen to the soundtrack</h2>
+        <!-- MUSIC PLAYER -->
+        <section class="music-section">
 
-        <div class="music-player">
-            <div class="music icon">♫</div>
+            <p class="section-label">music (inspo) of bluehour</p>
+            <h2>listen to the soundtrack</h2>
 
-            <div class="music-info">
-                <h3>Senbonzakura</h3>
-                <p>Lizz Robinett</p>
+            <div class="music-player">
+
+                <div class="music-icon">♫</div>
+
+                <div class="music-info">
+                    <h3>Senbonzakura</h3>
+                    <p>Lizz Robinett</p>
+                </div>
+
+                <audio id="bgMusic" controls loop preload="auto">
+                    <source
+                        src="./music/senbonzakura.mp3"
+                        type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+
             </div>
-            <audio controls loop>
-                <source src="./music/senbonzakura.mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
-        </div>
-    </section>
+
+            <!-- FLOATING MUSIC BUTTON -->
+            <button
+                id="musicToggle"
+                class="music-toggle"
+                type="button">
+                ♫ Music: OFF
+            </button>
+        </section>
 
 
     <!-- game display -->
@@ -82,7 +84,7 @@
                     game when it is ready.
                 </p>
             </div>
-
+        </div>
             <!--When game is hosted, replace the placeholder above with its embed iframe.
                 <iframe
                     src="YOUR_GAME_URL"
