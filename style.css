@@ -761,11 +761,19 @@ footer p {
                 transform 0.9s ease;
 }
 
-.intro.visible,
-.about.visible,
-.intrests.visible {
+
+.intro,
+.about,
+.intrests {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.about h2,
+.intrests h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
 }
 
 /*MOBILE RESPONSIVENESS*/
